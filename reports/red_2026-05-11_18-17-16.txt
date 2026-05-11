@@ -1,0 +1,41 @@
+================================================
+  REPORTE DE DIAGNOSTICO DE RED - 2026-05-11_18-17-16
+================================================
+
+--- 1. INTERFACES DE RED ---
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 192.168.158.207/20 brd 192.168.159.255 scope global eth0
+
+--- 2. TABLA DE RUTAS ---
+default via 192.168.144.1 dev eth0 proto kernel 
+192.168.144.0/20 dev eth0 proto kernel scope link src 192.168.158.207 
+
+--- 3. CONFIGURACION DNS ---
+nameserver 192.168.144.1
+
+--- 4. CONECTIVIDAD (PING) ---
+  [OK]   google.com - alcanzable (latencia avg: 34.166ms)
+  [OK]   8.8.8.8 - alcanzable (latencia avg: 20.475ms)
+  [OK]   github.com - alcanzable (latencia avg: 48.138ms)
+
+--- 5. RESOLUCION DNS ---
+  [OK]   google.com -> 142.251.134.206
+  [OK]   8.8.8.8 - es una IP
+  [OK]   github.com -> 4.228.31.150
+
+--- 6. SERVICIOS HTTP ---
+  [OK]   https://google.com -> HTTP 301
+  [OK]   https://github.com -> HTTP 200
+
+--- 7. PUERTOS LOCALES EN ESCUCHA ---
+LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*          
+LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*          
+
+------------------------------------------------
+RESUMEN: 8 OK | 0
+0 WARN | 0
+0 FAIL
+Reporte guardado en: /home/mayra/devops-TP04/reports/red_2026-05-11_18-17-16.txt
+------------------------------------------------
